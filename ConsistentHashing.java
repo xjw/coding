@@ -1,5 +1,9 @@
 import java.util.*;
 
+/**
+ * http://www.tom-e-white.com/2007/11/consistent-hashing.html
+ */
+
 public class ConsistentHashing<T> {
 
     public static class HashFunction {
