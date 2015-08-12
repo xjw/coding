@@ -17,7 +17,7 @@ public class WordBreak {
 
         for (int i = 1; i < s.length(); i++) {
             String prefix = s.substring(0, i);
-            if (wordDict.contains(prefix) && wordDict.contains(s.substring(i))) {
+            if (wordDict.contains(prefix) && wordBreakRecursion(s.substring(i))) {
                 return true;
             }
         }
@@ -34,7 +34,7 @@ public class WordBreak {
 
         for (int i = 1; i < s.length(); i++) {
             String prefix = s.substring(0, i);
-            if (wordDict.contains(prefix) && wordDict.contains(s.substring(i))) {
+            if (wordDict.contains(prefix) && wordBreakRecursionWithCaching(s.substring(i))) {
                 cache.put(s, true);
                 return true;
             }
@@ -54,8 +54,8 @@ public class WordBreak {
         int len = s.length();
         boolean[] cache = new boolean[len+1];
         cache[len] = true;
-        for (int i = s.length() - 1; i >= 0; i--) {
-            for (int j = i; j <= s.length(); j++) {
+        for (int i = len - 1; i >= 0; i--) {
+            for (int j = i; j <= len ; j++) {
                 if (cache[j] && wordDict.contains(s.substring(i,j))) {
                     cache[i] = true;
                 }
