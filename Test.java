@@ -7,6 +7,7 @@ class Test {
 
     public static void main(String[] args) {
         List<Integer> l = Test.<Integer>test();
+        System.out.println("abc".substring(2,3));
     }
 
 }

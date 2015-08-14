@@ -6,6 +6,9 @@ public class LCA {
         TreeNode(int x) { val = x; }
     }
 
+    /**
+     * Bottom up approach, O(n) worst case time complexity
+     */
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null) return null;
         if (root == p || root == q) return root;
